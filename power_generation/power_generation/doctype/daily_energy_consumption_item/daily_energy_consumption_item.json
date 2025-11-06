@@ -1,0 +1,92 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-06 07:28:02.073289",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "workstation",
+  "start_reading",
+  "end_reading",
+  "diff",
+  "form",
+  "cons",
+  "rate",
+  "amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "workstation",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Workstation",
+   "options": "Workstation"
+  },
+  {
+   "default": "0",
+   "fieldname": "start_reading",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Start Reading"
+  },
+  {
+   "default": "0",
+   "fieldname": "end_reading",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "End Reading"
+  },
+  {
+   "fieldname": "diff",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Diff",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "workstation.custom_form",
+   "fieldname": "form",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Form",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cons",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Cons",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "workstation.custom_rate",
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-11-06 09:12:07.481317",
+ "modified_by": "Administrator",
+ "module": "Power Generation",
+ "name": "Daily Energy Consumption Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
