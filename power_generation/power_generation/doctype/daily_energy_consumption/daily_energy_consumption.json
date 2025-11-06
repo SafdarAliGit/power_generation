@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:DEC-{DD}-{MM}-{YY}",
+ "autoname": "format:DEC-{DD}-{MM}-{YY}-{##}",
  "creation": "2025-11-06 07:45:54.448926",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -55,7 +55,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-06 08:08:20.019903",
+ "modified": "2025-11-06 21:30:17.345257",
  "modified_by": "Administrator",
  "module": "Power Generation",
  "name": "Daily Energy Consumption",
