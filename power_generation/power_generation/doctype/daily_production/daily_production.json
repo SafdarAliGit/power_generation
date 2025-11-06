@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:DP-{DD}-{MM}-{YY}",
  "creation": "2025-11-06 09:24:05.219452",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -66,10 +67,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-06 09:27:11.617629",
+ "modified": "2025-11-06 19:24:33.424853",
  "modified_by": "Administrator",
  "module": "Power Generation",
  "name": "Daily Production",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
