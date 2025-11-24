@@ -115,7 +115,7 @@ def execute(filters=None):
 def get_columns():
     return [
         {"label": "Section", "fieldname": "section", "fieldtype": "Data", "width": 200},
-        {"label": "Workstation / Item / Account", "fieldname": "workstation", "fieldtype": "Data", "width": 200},
+        {"label": "Workstation", "fieldname": "workstation", "fieldtype": "Data", "width": 200},
         {"label": "Item Code", "fieldname": "item_code", "fieldtype": "Data", "width": 120},
         {"label": "Account", "fieldname": "account", "fieldtype": "Data", "width": 200},
         {"label": "Production (KG)", "fieldname": "total_kg", "fieldtype": "Float", "width": 150},
