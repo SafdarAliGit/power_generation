@@ -81,7 +81,7 @@ def execute(filters=None):
     accounts = frappe.db.sql("""
         SELECT 
             gle.account AS workstation,
-            SUM(gle.debit) AS total_debit
+            SUM(gle.debit) AS total_amount
         FROM `tabGL Entry` gle
         JOIN `tabAccount` acc ON acc.name = gle.account
         WHERE gle.is_cancelled = 0
@@ -91,7 +91,7 @@ def execute(filters=None):
         ORDER BY gle.account
     """, (from_date, to_date), as_dict=True)
 
-    total_accounts = sum(r.total_debit for r in accounts) if accounts else 0
+    total_accounts = sum(r.total_amount for r in accounts) if accounts else 0
 
     data.append({"section": "Manufacturing Accounts"})
     data.extend(accounts)
