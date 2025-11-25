@@ -1,5 +1,5 @@
 {
- "add_total_row": 0,
+ "add_total_row": 1,
  "add_translate_data": 0,
  "columns": [],
  "creation": "2025-11-24 21:19:30.652217",
@@ -10,7 +10,7 @@
  "idx": 0,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2025-11-24 21:19:30.652217",
+ "modified": "2025-11-25 20:57:01.549727",
  "modified_by": "Administrator",
  "module": "Power Generation",
  "name": "Daily Costing",

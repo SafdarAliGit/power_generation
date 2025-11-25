@@ -55,7 +55,7 @@ def execute(filters=None):
     # ----------------------------------------
     water = frappe.db.sql("""
         SELECT 
-            sed.item_code,
+            sed.item_code AS workstation,
             SUM(sed.amount) AS total_amount,
             SUM(sed.qty) AS total_kg
         FROM `tabStock Entry Detail` sed
