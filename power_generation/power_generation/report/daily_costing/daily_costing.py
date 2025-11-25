@@ -56,7 +56,8 @@ def execute(filters=None):
     water = frappe.db.sql("""
         SELECT 
             sed.item_code,
-            SUM(sed.amount) AS total_amount
+            SUM(sed.amount) AS total_amount,
+            SUM(sed.qty) AS total_kg
         FROM `tabStock Entry Detail` sed
         JOIN `tabStock Entry` se ON se.name = sed.parent
         WHERE se.docstatus = 1
@@ -70,7 +71,7 @@ def execute(filters=None):
 
     data.append({"section": "Water Consumption"})
     data.extend(water)
-    data.append({"item_code": "Total Water Amount", "total_amount": total_water})
+    data.append({"workstation": "Total Water Amount", "total_amount": total_water})
 
     # ----------------------------------------
     # 4) ACCOUNTS (GL Entry)
@@ -92,7 +93,7 @@ def execute(filters=None):
 
     data.append({"section": "Manufacturing Accounts"})
     data.extend(accounts)
-    data.append({"account": "Total Accounts", "total_debit": total_accounts})
+    data.append({"workstation": "Total Accounts", "total_amount": total_accounts})
 
     # ----------------------------------------
     # 5) FINAL RATE CALCULATION
@@ -116,12 +117,9 @@ def execute(filters=None):
 def get_columns():
     return [
         {"label": "Section", "fieldname": "section", "fieldtype": "Data", "width": 200},
-        {"label": "Workstation", "fieldname": "workstation", "fieldtype": "Data", "width": 200},
+        {"label": "Workstation/Account", "fieldname": "workstation", "fieldtype": "Data", "width": 200},
         {"label": "Plant Type", "fieldname": "plant_floor", "fieldtype": "Data", "width": 120},
-        {"label": "Item Code", "fieldname": "item_code", "fieldtype": "Data", "width": 120},
-        {"label": "Account", "fieldname": "account", "fieldtype": "Data", "width": 200},
-        {"label": "Production (KG)", "fieldname": "total_kg", "fieldtype": "Float", "width": 150},
+        {"label": "Qty", "fieldname": "total_kg", "fieldtype": "Float", "width": 150},
         {"label": "Amount", "fieldname": "total_amount", "fieldtype": "Currency", "width": 150},
-        {"label": "Debit", "fieldname": "total_debit", "fieldtype": "Currency", "width": 150},
         {"label": "Rate", "fieldname": "rate", "fieldtype": "Currency", "width": 150}
     ]
