@@ -5,9 +5,10 @@ frappe.ui.form.on("Daily Energy Consumption", {
 	refresh(frm) {
         frm.set_query("workstation","daily_energy_consumption_item", function() {
             return {
-                filters: {
-                    "workstation_type": "Energy"
-                }
+                filters: [
+                    ["workstation_type", "=", "Energy"],
+                    ["plant_floor", "=", frm.doc.plant_floor]
+                ]
             }
         });
 	},

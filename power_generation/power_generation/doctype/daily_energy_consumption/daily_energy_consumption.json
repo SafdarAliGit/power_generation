@@ -8,6 +8,8 @@
  "field_order": [
   "date",
   "amended_from",
+  "column_break_hjcb",
+  "plant_floor",
   "section_break_jtbf",
   "daily_energy_consumption_item",
   "section_break_akh2",
@@ -49,13 +51,23 @@
    "fieldtype": "Currency",
    "label": "Total Amount",
    "read_only": 1
+  },
+  {
+   "fieldname": "plant_floor",
+   "fieldtype": "Link",
+   "label": "Plant Type",
+   "options": "Plant Floor"
+  },
+  {
+   "fieldname": "column_break_hjcb",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-06 21:30:17.345257",
+ "modified": "2025-11-25 07:09:00.332867",
  "modified_by": "Administrator",
  "module": "Power Generation",
  "name": "Daily Energy Consumption",

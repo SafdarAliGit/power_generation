@@ -14,7 +14,8 @@
   "cons",
   "rate",
   "amount",
-  "utility"
+  "utility",
+  "plant_floor"
  ],
  "fields": [
   {
@@ -81,13 +82,20 @@
    "fieldtype": "Data",
    "label": "Utility",
    "read_only": 1
+  },
+  {
+   "fetch_from": "workstation.plant_floor",
+   "fieldname": "plant_floor",
+   "fieldtype": "Data",
+   "label": "Plant Type",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-11-07 20:51:48.011727",
+ "modified": "2025-11-25 07:12:20.253586",
  "modified_by": "Administrator",
  "module": "Power Generation",
  "name": "Daily Energy Consumption Item",
