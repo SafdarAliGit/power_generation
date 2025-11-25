@@ -107,7 +107,8 @@ def execute(filters=None):
 
     data.append({
         "section": "Final Costing",
-        "rate": final_rate
+        "rate": final_rate,
+        "total_amount": total_energy + total_water + total_accounts
     })
 
     return columns, data
