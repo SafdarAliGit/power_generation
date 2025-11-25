@@ -34,12 +34,13 @@ def execute(filters=None):
     energy = frappe.db.sql("""
         SELECT 
             deci.workstation,
+            deci.plant_floor,
             SUM(deci.amount) AS total_amount
         FROM `tabDaily Energy Consumption Item` deci
         JOIN `tabDaily Energy Consumption` dec_m ON dec_m.name = deci.parent
         WHERE dec_m.docstatus = 1
           AND dec_m.date BETWEEN %s AND %s
-        GROUP BY deci.workstation
+        GROUP BY deci.workstation, deci.plant_floor
         ORDER BY deci.workstation
     """, (from_date, to_date), as_dict=True)
 
@@ -116,6 +117,7 @@ def get_columns():
     return [
         {"label": "Section", "fieldname": "section", "fieldtype": "Data", "width": 200},
         {"label": "Workstation", "fieldname": "workstation", "fieldtype": "Data", "width": 200},
+        {"label": "Plant Type", "fieldname": "plant_floor", "fieldtype": "Data", "width": 120},
         {"label": "Item Code", "fieldname": "item_code", "fieldtype": "Data", "width": 120},
         {"label": "Account", "fieldname": "account", "fieldtype": "Data", "width": 200},
         {"label": "Production (KG)", "fieldname": "total_kg", "fieldtype": "Float", "width": 150},
