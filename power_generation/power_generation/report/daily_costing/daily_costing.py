@@ -101,7 +101,7 @@ def execute(filters=None):
     # 5) FINAL RATE CALCULATION
     # ----------------------------------------
     if total_production_kg > 0:
-        final_rate = (total_energy + total_water + total_accounts) / total_production_kg + total_water_kg
+        final_rate = (total_energy + total_water + total_accounts) / total_production_kg
     else:
         final_rate = 0
 
