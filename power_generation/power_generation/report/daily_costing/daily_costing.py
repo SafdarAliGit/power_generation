@@ -68,17 +68,19 @@ def execute(filters=None):
     """, (from_date, to_date), as_dict=True)
 
     total_water = sum(r.total_amount for r in water) if water else 0
+    
+    total_water_kg = sum(r.total_kg for r in water) if water else 0
 
     data.append({"section": "Water Consumption"})
     data.extend(water)
-    data.append({"workstation": "Total Water Amount", "total_amount": total_water})
+    data.append({"workstation": "Total Water Amount", "total_amount": total_water, "total_kg": total_water_kg})
 
     # ----------------------------------------
     # 4) ACCOUNTS (GL Entry)
     # ----------------------------------------
     accounts = frappe.db.sql("""
         SELECT 
-            gle.account,
+            gle.account AS workstation,
             SUM(gle.debit) AS total_debit
         FROM `tabGL Entry` gle
         JOIN `tabAccount` acc ON acc.name = gle.account
@@ -99,7 +101,7 @@ def execute(filters=None):
     # 5) FINAL RATE CALCULATION
     # ----------------------------------------
     if total_production_kg > 0:
-        final_rate = (total_energy + total_water + total_accounts) / total_production_kg
+        final_rate = (total_energy + total_water + total_accounts) / total_production_kg + total_water_kg
     else:
         final_rate = 0
 
