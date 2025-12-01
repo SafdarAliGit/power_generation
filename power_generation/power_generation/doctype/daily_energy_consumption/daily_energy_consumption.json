@@ -66,8 +66,14 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [],
- "modified": "2025-11-25 07:09:00.332867",
+ "links": [
+  {
+   "group": "Stock Entries",
+   "link_doctype": "Stock Entry",
+   "link_fieldname": "custom_daily_energy_consumption"
+  }
+ ],
+ "modified": "2025-12-01 17:44:44.133090",
  "modified_by": "Administrator",
  "module": "Power Generation",
  "name": "Daily Energy Consumption",
